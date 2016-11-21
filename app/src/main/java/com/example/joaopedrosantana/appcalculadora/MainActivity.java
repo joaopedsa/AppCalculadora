@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void clique(View view){
         if(view.getId() == R.id.buttonSoma || view.getId() == R.id.buttonMenos|| view.getId() == R.id.buttonporcento
-                ||view.getId() == R.id.buttonX){
+                ||view.getId() == R.id.buttonX || view.getId() == R.id.buttonDiv){
             Button botao = (Button) findViewById(view.getId());
             operNum((String) botao.getText());
         }
@@ -90,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
             texto.setText(String.valueOf(resultado));
             num1 = resultado;
         }
-
+        if(operacao.equals("/")) {
+            num2 = Float.parseFloat(texto.getText().toString());
+            resultado = num1 / num2;
+            texto.setText(String.valueOf(resultado));
+            num1 = resultado;
+        }
     }
 }
